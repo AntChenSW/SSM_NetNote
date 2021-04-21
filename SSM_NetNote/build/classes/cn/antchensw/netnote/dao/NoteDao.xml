@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.antchensw.netnote.dao.NoteDao">
+    
+    <select id="getNote" parameterType="Integer" resultType="Note">
+        select * from t_note where id=#{id}
+    </select>
+    
+    <select id="getNotes"  resultType="Note">
+        select * from t_note where user_id=#{user_id}
+    </select>
+    
+    
+
+    <insert id="addNote" parameterType="Note">
+        insert into t_note(level,title,date,content,user_id) 
+        values(#{level},#{title},#{date},#{content},#{user_id})
+    </insert>
+    
+    <delete id="delNote" parameterType="Integer">
+        delete from t_note where id=#{id}
+    </delete>
+    
+    <update id="updateNote" parameterType="Note">
+        update t_note set
+        level=#{level},title=#{title},date=#{date},content=#{content},user_id=#{user_id}
+        where id=#{id}
+    </update>
+    
+    
+
+</mapper>

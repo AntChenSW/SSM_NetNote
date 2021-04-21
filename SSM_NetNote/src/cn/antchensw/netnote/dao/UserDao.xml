@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.antchensw.netnote.dao.UserDao">
+    
+    <select id="getUserByName" parameterType="String" resultType="User">
+        select * from t_user where name=#{name}
+    </select>
+    
+    <select id="getUserByEmail" parameterType="String" resultType="User">
+        select * from t_user where email=#{email}
+    </select>
+
+    <select id="getUser"  resultType="User">
+        select * from t_user where name=#{name} and password=#{password}
+    </select>
+    
+    <insert id="addUser" parameterType="User">
+        insert into t_user(name,password,email,level,photo) 
+        values(#{name},#{password},#{email},#{level},#{photo})
+    </insert>
+    
+    <delete id="delUser" parameterType="Integer">
+        delete from t_user where id=#{id}
+    </delete>
+    
+    <update id="updateUser" parameterType="User">
+        update t_user set
+        name=#{name},password=#{password},email=#{email},level=#{level},photo=#{photo}
+        where id=#{id}
+    </update>
+    
+    <select id="getPass" parameterType="String" resultType="java.lang.String">
+        select password from t_user where email=#{email}
+    </select>
+    
+    
+
+</mapper>

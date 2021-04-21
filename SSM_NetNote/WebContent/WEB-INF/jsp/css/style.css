@@ -1,0 +1,48 @@
+* {
+	margin: 0 auto;
+	padding: 0px;
+}
+body {
+	margin: auto;
+	
+	align-content: center;
+    text-align: center;
+    
+}
+
+.center_content{
+	align-content: center;
+	text-align: center;
+}
+
+table {
+	width: 95%;
+	margin: 0px auto;
+}
+
+table.gridtable {
+	font-family: verdana, arial, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table.gridtable thead {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	align: center;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
